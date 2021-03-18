@@ -5,26 +5,25 @@ import {cart} from '../Items'
 import Cart from './Cart'
 
 function Home() {
+
   const [ page,setPage]=useState("products")
     const [array1,setArray1]=useState([{
         id:1,
-        productName:"Cotton T Shirt",
-        price:200,
-        description:"lorem ispum",
-        photo:"https://images-na.ssl-images-amazon.com/images/I/61iiqjsC5GL._AC_UX522_.jpg"
+        productName:"DREAM CATCHER",
+        price:1000,
+        background:"grey",
+        photo:"https://i.picsum.photos/id/104/3840/2160.jpg?hmac=Rv0qxBiYb65Htow4mdeDlyT5kLM23Z2cDlN53YYldZU" 
     },
     {   id:2,
-        productName:"Half T Shirt",
-        price:250,
-        description:"lorem ispum",
-        photo:"https://s2.thcdn.com/productimg/1600/1600/11731715-1594570638970884.jpg"
+        productName:"SHIRTS",
+        price:2000,
+        photo:"https://i.picsum.photos/id/1059/7360/4912.jpg?hmac=vVWk1qyiXN_VgPhpNqFm3yl2HUPW6fHqYOjTHYO2bHQ"
     },
     {    
-         id:3,
-        productName:"Half Round Neck T Shirt",
-        price:400,
-        description:"lorem ispum",
-        photo:'https://m.media-amazon.com/images/I/81tvJbBywiL._AC_UL1500_.jpg'
+        id:3,
+        productName:"CAR",
+        price:200000,
+        photo:'https://i.picsum.photos/id/111/4400/2656.jpg?hmac=leq8lj40D6cqFq5M_NLXkMYtV-30TtOOnzklhjPaAAQ'
     },
     ])
     const [cart,setCart]=useState([])
@@ -92,7 +91,7 @@ function Home() {
             (page==="products")?
             <>
              <Header cart={cart} toggleHome={toggleHome}/>
-         <h1>Our Products</h1>
+         <h1 className="m-5 bold"> Our Products</h1>
          <div style={{height:"100px",width:"90%",display:'flex',justifyContent:'space-between'}}>
            {
              array1.map((p,i)=>{
@@ -108,8 +107,8 @@ function Home() {
           {
             (page==="cart")?
             <>
-             <Header cart={cart}/>
-             <button className="btn btn-primary" style={{fontSize:"20px"}} onClick={()=>{toggleCart()}}>back</button>
+             <Header  cart={cart}/>
+             <button className="btn btn-primary btn-lg m-5" style={{fontSize:"20px"}} onClick={()=>{toggleCart()}}>back</button>
              <div style={{height:"100px",width:"90%",display:'flex',justifyContent:'space-between'}}>
              {
              cart.map((p,i)=>{
